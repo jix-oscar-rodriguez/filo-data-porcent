@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --background-div: #1e2c68;
+    --title:#fcffff;
+    --title-2:#151e48;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: hsl(229, 57%, 11%);
+    background-image: url("./images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    color: #c0cbfe;
+    height: 100vh;
+}
+.filo-container{
+    margin: auto auto;
+    width: 65%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(370px ,300px) minmax(560px, 600px);
+    place-items: center;
+    gap: 4rem;
+}
+.filo-container .explorer-container{
+background-color: var(--background-div);
+height: 210px;
+width: 100%;
+display: flex;
+padding: 4rem ;
+justify-content: space-between;
+flex-direction: column;
+border-radius: 2rem 13rem 1rem 0;
+}
+.loader-container{
+    background-color: var(--background-div);
+    width: 100%;
+}
+.explorer-header{
+display: flex;
+}
+.exlorer-files{
+    display: flex;
+    gap: 1rem;
+}
+.exlorer-files img{
+    background-color: var(--title-2);
+    padding: 1.2rem;
+    border-radius: 1rem;
+
+}
+.loader-container{
+    position: relative;
+    margin-top: 1rem;
+    padding:4rem 3rem  ;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.loader-info h1{
+    font-weight: 400;
+    margin-bottom: 1.3rem;
+}
+.loader-info  span{
+    margin: .3rem;
+    font-weight: bold;
+}
+.loading{
+    width: 100%;
+    height: 24px;
+    border-radius: 20px;
+   background-color: var(--title-2);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.loading::after{
+    content: "";
+    background: rgb(253,159,151);
+background: linear-gradient(90deg, rgba(253,159,151,1) 41%, rgba(250,76,143,1) 81%);
+width: 0%;
+height: 2.5rem;
+border-radius: 2rem;
+position: absolute;
+animation: progress 2s linear forwards;
+}
+@keyframes progress{
+    100%{
+        width: 70%;
+    }
+    
+}
+
+
+
+
+
+.usage{
+    display: flex;
+    justify-content: space-between;
+}
+.gb-used{
+    position: absolute;
+    background-color: white;
+    width: 160px;
+    top: -2rem;
+    display: flex;
+    border-radius: 1rem;
+    right: 5rem;
+    padding: 1rem;
+
+}
+.gb-used h3{
+    color: var(--title-2);
+    font-size: 3.3rem;
+
+
+}
+
+
+@media screen and (min-width: 960px){
+    .gb-used::before{
+        content: "";
+        position: absolute;
+        width: 73px;
+        height: 38px;
+        right: 0;
+        bottom: -22px;
+        -webkit-clip-path: polygon(101% 0%, 48% 0%, 101% 100%);
+        clip-path: polygon(101% 0%, 48% 0%, 101% 100%);
+        background-color: #ffffff;
+    }
+}
+@media screen and (max-width: 460px){
+
+    
+    .filo-container{
+       grid-template-columns: 1fr; 
+       height: auto;
+    }
+    body{
+        display: grid;
+    }
+    .gb-used{
+        top: 16rem;
+    }
+}
